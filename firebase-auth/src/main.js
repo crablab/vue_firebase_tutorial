@@ -5,13 +5,13 @@ import * as firebase from "firebase";
 Vue.config.productionTip = false;
 
 const configOptions = {
-  apiKey: "",
-  authDomain: "vue-firebase-auth-def4c.firebaseapp.com",
-  databaseURL: "https://vue-firebase-auth-def4c.firebaseio.com",
-  projectId: "vue-firebase-auth-def4c",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.VUE_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID
 };
 
 firebase.initializeApp(configOptions);
