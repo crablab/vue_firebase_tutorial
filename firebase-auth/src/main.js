@@ -1,7 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./routes/index";
 import * as firebase from "firebase";
+
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import router from "./routes/index";
 import store from "./store";
 
 Vue.config.productionTip = false;
@@ -21,6 +26,11 @@ firebase.initializeApp(configOptions);
 firebase.auth().onAuthStateChanged(user => {
   store.dispatch("fetchUser", user);
 });
+
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 new Vue({
   router,
